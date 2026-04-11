@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | HB Dev</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* COLORS */
+:root {
+  --bg: #0f172a;
+  --accent: #3b82f6;
+  --text: #ffffff;
+}
+
+/* BODY */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: var(--text);
+  text-align: center;
+}
+
+/* CARD */
+.container {
+  background: rgba(255,255,255,0.05);
+  padding: 40px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  max-width: 400px;
+}
+
+/* ICON */
+.icon {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+/* TEXT */
+h1 {
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="icon">✅</div>
+
+  <h1>Message Sent!</h1>
+
+  <p>
+    Thank you for reaching out. I’ve received your message and will get back to you as soon as possible.
+  </p>
+
+  <a href="index.html" class="btn">⬅ Back to Homepage</a>
+</div>
+
+</body>
+</html>

@@ -701,7 +701,7 @@ input, textarea {
 
 .about-highlights {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--spacing-md);
 }
 
@@ -782,7 +782,7 @@ input, textarea {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--spacing-md);
 }
 
@@ -855,7 +855,7 @@ input, textarea {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xl);
 }
 
@@ -1018,7 +1018,7 @@ input, textarea {
    ============================================ */
 .experiments-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--spacing-md);
 }
 
@@ -1214,7 +1214,7 @@ input, textarea {
    ============================================ */
 .services-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--spacing-lg);
 }
 

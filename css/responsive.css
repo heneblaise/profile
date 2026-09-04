@@ -13,6 +13,10 @@
         max-width: 560px;
     }
 
+    .about-highlights {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .hero-cta {
         flex-direction: row;
         max-width: none;
@@ -20,6 +24,10 @@
 
     .hero-cta .btn {
         flex: 1;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
     }
 
     .footer-grid {
@@ -93,6 +101,20 @@
     .about-image-wrapper {
         max-width: 320px;
         flex-shrink: 0;
+    }
+
+    /* Skills */
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Projects */
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .experiments-grid {
+        grid-template-columns: 1fr 1fr;
     }
 
     /* Building */

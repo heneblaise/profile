@@ -1,0 +1,243 @@
+/* ============================================
+   RESPONSIVE CSS
+   Mobile-first: 480 → 768 → 1024 → 1280 → 1440
+   ============================================ */
+
+/* --- 480px+ Large Mobile --- */
+@media (min-width: 480px) {
+    .hero-name {
+        font-size: var(--fs-4xl);
+    }
+
+    .stats {
+        max-width: 560px;
+    }
+
+    .about-highlights {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-cta {
+        flex-direction: row;
+        max-width: none;
+    }
+
+    .hero-cta .btn {
+        flex: 1;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .footer-brand {
+        flex: 1 1 100%;
+    }
+
+    .footer-links {
+        flex: 1;
+    }
+}
+
+/* --- 768px+ Tablet --- */
+@media (min-width: 768px) {
+    .container {
+        padding: 0 2rem;
+    }
+
+    .section {
+        padding: var(--spacing-4xl) 0;
+    }
+
+    .section-title {
+        font-size: var(--fs-3xl);
+    }
+
+    /* Nav */
+    .nav-links {
+        display: flex;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    /* Hero */
+    .hero .container {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+    }
+
+    .hero-content {
+        align-items: flex-start;
+        flex: 1;
+    }
+
+    .hero-title-wrapper {
+        justify-content: flex-start;
+    }
+
+    .hero-profile {
+        width: 260px;
+        height: 260px;
+    }
+
+    .hero-cta {
+        max-width: 400px;
+    }
+
+    /* About */
+    .about-grid {
+        flex-direction: row;
+        gap: var(--spacing-3xl);
+    }
+
+    .about-image-wrapper {
+        max-width: 320px;
+        flex-shrink: 0;
+    }
+
+    /* Skills */
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Projects */
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .experiments-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Building */
+    .building-card {
+        flex-direction: row;
+        gap: var(--spacing-2xl);
+    }
+
+    .building-progress {
+        flex: 1;
+    }
+
+    .building-tasks {
+        flex: 1;
+    }
+
+    /* Process */
+    .process-timeline {
+        flex-direction: row;
+        padding-left: 0;
+        gap: var(--spacing-lg);
+    }
+
+    .process-timeline::before {
+        left: 0;
+        right: 0;
+        top: 11px;
+        width: auto;
+        height: 2px;
+    }
+
+    .process-step {
+        flex: 1;
+        padding-top: var(--spacing-2xl);
+    }
+
+    .process-number {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Contact */
+    .contact-grid {
+        flex-direction: row;
+        gap: var(--spacing-3xl);
+    }
+
+    .contact-info {
+        flex: 1;
+    }
+
+    .contact-form {
+        flex: 1;
+    }
+
+    /* Footer */
+    .footer-grid {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-brand {
+        flex: 1 1 30%;
+    }
+
+    .footer-links {
+        flex: 0 0 auto;
+    }
+
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* --- 1024px+ Laptop --- */
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 2.5rem;
+    }
+
+    .hero-name {
+        font-size: var(--fs-5xl);
+    }
+
+    .hero-profile {
+        width: 320px;
+        height: 320px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .about-highlights {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .experiments-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* --- 1280px+ Desktop --- */
+@media (min-width: 1280px) {
+    .container {
+        padding: 0 3rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* --- 1440px+ Large Desktop --- */
+@media (min-width: 1440px) {
+    :root {
+        --container: 1320px;
+    }
+}

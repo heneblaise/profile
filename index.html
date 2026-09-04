@@ -1,1058 +1,548 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HB Creative Portfolio</title>
-
-<style>
-:root {
-  --ink: #f8fafc;
-  --muted: #a7b3c7;
-  --paper: #080d18;
-  --panel: #111827;
-  --line: rgba(148, 163, 184, 0.22);
-  --brand: #22d3ee;
-  --brand-dark: #67e8f9;
-  --accent: #f97316;
-  --rose: #fb7185;
-  --deep: #050816;
-  --soft: #0d1424;
-  --shadow: 0 22px 60px rgba(0, 0, 0, 0.38);
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  min-height: 100vh;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: Inter, "Segoe UI", Arial, sans-serif;
-  line-height: 1.6;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
-  background: rgba(8, 13, 24, 0.86);
-  backdrop-filter: blur(18px);
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  width: min(1160px, calc(100% - 32px));
-  margin: 0 auto;
-  padding: 16px 0;
-}
-
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 800;
-  letter-spacing: 0;
-}
-
-.brand-mark {
-  display: grid;
-  width: 38px;
-  height: 38px;
-  place-items: center;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--brand), #2563eb);
-  color: #fff;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  color: var(--muted);
-  font-size: 0.95rem;
-  font-weight: 650;
-}
-
-.nav-links a:hover {
-  color: var(--brand);
-}
-
-.nav-cta,
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  border: 0;
-  border-radius: 8px;
-  cursor: pointer;
-  font: inherit;
-  font-weight: 750;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
-
-.nav-cta {
-  padding: 10px 16px;
-  background: var(--brand);
-  color: #04111d;
-}
-
-.btn {
-  padding: 13px 20px;
-}
-
-.btn.primary {
-  background: linear-gradient(135deg, var(--brand), #2563eb);
-  color: #03111f;
-  box-shadow: 0 14px 32px rgba(34, 211, 238, 0.22);
-}
-
-.btn.secondary {
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--ink);
-}
-
-.btn:hover,
-.nav-cta:hover {
-  transform: translateY(-2px);
-}
-
-main {
-  overflow: hidden;
-}
-
-.section {
-  padding: 88px 0;
-}
-
-.section.alt {
-  background: var(--soft);
-}
-
-.wrap {
-  width: min(1160px, calc(100% - 32px));
-  margin: 0 auto;
-}
-
-.hero {
-  position: relative;
-  min-height: calc(100vh - 72px);
-  display: grid;
-  align-items: center;
-  padding: 78px 0 54px;
-  background:
-    linear-gradient(90deg, rgba(8, 13, 24, 0.98) 0%, rgba(8, 13, 24, 0.9) 50%, rgba(8, 13, 24, 0.36) 100%),
-    url("images/image2.jpeg") center right / cover;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.78fr);
-  gap: 56px;
-  align-items: center;
-}
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 18px;
-  color: var(--brand-dark);
-  font-size: 0.82rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.eyebrow::before {
-  content: "";
-  width: 34px;
-  height: 2px;
-  background: var(--accent);
-}
-
-.hero h1 {
-  max-width: 760px;
-  font-size: clamp(2.7rem, 7vw, 6.4rem);
-  line-height: 0.94;
-  letter-spacing: 0;
-}
-
-.hero h1 span {
-  color: var(--brand);
-}
-
-.hero-copy {
-  max-width: 650px;
-  margin: 24px 0 30px;
-  color: #c7d2e4;
-  font-size: clamp(1rem, 2vw, 1.18rem);
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 34px;
-}
-
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  max-width: 620px;
-}
-
-.stat {
-  border-left: 3px solid var(--accent);
-  background: rgba(17, 24, 39, 0.78);
-  padding: 16px;
-}
-
-.stat strong {
-  display: block;
-  font-size: 1.45rem;
-  line-height: 1;
-}
-
-.stat span {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.hero-panel {
-  background: rgba(17, 24, 39, 0.82);
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-  padding: 18px;
-}
-
-.hero-panel img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: 6px;
-  object-fit: cover;
-}
-
-.panel-caption {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 16px;
-}
-
-.panel-caption strong {
-  font-size: 1rem;
-}
-
-.panel-caption span {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.section-head {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 28px;
-  margin-bottom: 36px;
-}
-
-.section-head h2 {
-  max-width: 650px;
-  font-size: clamp(2rem, 4vw, 3.4rem);
-  line-height: 1;
-  letter-spacing: 0;
-}
-
-.section-head p {
-  max-width: 430px;
-  color: var(--muted);
-}
-
-.services {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.service {
-  min-height: 260px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--panel);
-  padding: 26px;
-  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.24);
-}
-
-.service-icon {
-  display: grid;
-  width: 48px;
-  height: 48px;
-  margin-bottom: 22px;
-  place-items: center;
-  border-radius: 8px;
-  background: var(--soft);
-  color: var(--brand-dark);
-  font-size: 1.35rem;
-  font-weight: 900;
-}
-
-.service h3,
-.project h3,
-.accordion-title {
-  font-size: 1.2rem;
-  line-height: 1.25;
-}
-
-.service p,
-.project p,
-.accordion-content p {
-  margin-top: 12px;
-  color: var(--muted);
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 20px;
-}
-
-.tags span {
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 6px 10px;
-  color: var(--muted);
-  font-size: 0.82rem;
-  font-weight: 700;
-}
-
-.feature-band {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 46px;
-  align-items: center;
-}
-
-.feature-media {
-  position: relative;
-}
-
-.feature-media img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: var(--shadow);
-}
-
-.feature-card {
-  position: absolute;
-  right: -22px;
-  bottom: 24px;
-  width: min(250px, 72%);
-  border-radius: 8px;
-  background: linear-gradient(135deg, #050816, #172554);
-  color: #fff;
-  padding: 20px;
-  box-shadow: 0 18px 40px rgba(21, 21, 31, 0.24);
-}
-
-.feature-copy h2 {
-  font-size: clamp(2rem, 4vw, 3.35rem);
-  line-height: 1;
-}
-
-.feature-copy p {
-  margin: 18px 0;
-  color: var(--muted);
-}
-
-.check-list {
-  display: grid;
-  gap: 12px;
-  margin-top: 24px;
-  list-style: none;
-}
-
-.check-list li {
-  display: grid;
-  grid-template-columns: 28px 1fr;
-  gap: 10px;
-  align-items: start;
-  color: #d7deeb;
-}
-
-.check-list li::before {
-  content: "✓";
-  display: grid;
-  width: 24px;
-  height: 24px;
-  place-items: center;
-  border-radius: 7px;
-  background: rgba(34, 211, 238, 0.14);
-  color: var(--brand-dark);
-  font-weight: 900;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.project {
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--panel);
-  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.25);
-}
-
-.project img,
-.project-placeholder {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-}
-
-.project-placeholder {
-  display: grid;
-  place-items: center;
-  background:
-    linear-gradient(135deg, rgba(34, 211, 238, 0.16), rgba(249, 115, 22, 0.2)),
-    var(--soft);
-  color: var(--brand-dark);
-  font-weight: 900;
-  font-size: 2rem;
-}
-
-.project-body {
-  padding: 22px;
-}
-
-.project-link {
-  display: inline-flex;
-  margin-top: 20px;
-  color: var(--brand-dark);
-  font-weight: 850;
-}
-
-.process {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  counter-reset: step;
-}
-
-.process-step {
-  counter-increment: step;
-  border-top: 2px solid var(--accent);
-  padding: 20px 6px 0 0;
-}
-
-.process-step::before {
-  content: "0" counter(step);
-  color: var(--rose);
-  font-weight: 900;
-}
-
-.process-step h3 {
-  margin: 8px 0;
-  font-size: 1.04rem;
-}
-
-.process-step p {
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.accordion {
-  display: grid;
-  gap: 12px;
-}
-
-.accordion-item {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--panel);
-  overflow: hidden;
-}
-
-.accordion-button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  width: 100%;
-  border: 0;
-  background: transparent;
-  color: var(--ink);
-  cursor: pointer;
-  padding: 22px;
-  text-align: left;
-  font: inherit;
-}
-
-.accordion-button::after {
-  content: "+";
-  display: grid;
-  flex: 0 0 34px;
-  width: 34px;
-  height: 34px;
-  place-items: center;
-  border-radius: 8px;
-  background: var(--soft);
-  color: var(--brand-dark);
-  font-size: 1.35rem;
-  font-weight: 800;
-}
-
-.accordion-button[aria-expanded="true"]::after {
-  content: "−";
-}
-
-.accordion-content {
-  display: none;
-  padding: 0 22px 22px;
-}
-
-.accordion-content.open {
-  display: block;
-}
-
-.contact-layout {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 34px;
-  align-items: start;
-}
-
-.contact-note {
-  border-radius: 8px;
-  background: linear-gradient(135deg, #050816, #172554);
-  color: #fff;
-  padding: 32px;
-}
-
-.contact-note h2 {
-  font-size: clamp(2rem, 4vw, 3.1rem);
-  line-height: 1;
-}
-
-.contact-note p {
-  margin: 18px 0 24px;
-  color: #d6dae1;
-}
-
-.contact-list {
-  display: grid;
-  gap: 10px;
-  list-style: none;
-  color: #f4efe7;
-}
-
-.contact-form {
-  display: grid;
-  gap: 14px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--panel);
-  padding: 24px;
-  box-shadow: var(--shadow);
-}
-
-.field-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-label {
-  display: grid;
-  gap: 7px;
-  color: #dce6f5;
-  font-size: 0.9rem;
-  font-weight: 760;
-}
-
-input,
-textarea {
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--soft);
-  color: var(--ink);
-  font: inherit;
-  padding: 13px 14px;
-}
-
-textarea {
-  min-height: 150px;
-  resize: vertical;
-}
-
-input:focus,
-textarea:focus {
-  border-color: var(--brand);
-  outline: 3px solid rgba(15, 118, 110, 0.14);
-}
-
-.site-footer {
-  border-top: 1px solid var(--line);
-  background: var(--deep);
-  padding: 26px 0;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  color: var(--muted);
-  font-size: 0.94rem;
-}
-
-.footer-links {
-  display: flex;
-  gap: 16px;
-  color: var(--ink);
-  font-weight: 700;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
-}
-
-.reveal.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (max-width: 920px) {
-  .nav {
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .hero {
-    min-height: auto;
-  }
-
-  .hero-grid,
-  .feature-band,
-  .contact-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-panel {
-    max-width: 520px;
-  }
-
-  .services,
-  .projects-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .process {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 640px) {
-  .section {
-    padding: 62px 0;
-  }
-
-  .hero {
-    padding: 54px 0 44px;
-  }
-
-  .hero h1 {
-    font-size: clamp(2.45rem, 16vw, 4.2rem);
-  }
-
-  .hero-stats,
-  .services,
-  .projects-grid,
-  .process,
-  .field-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .section-head,
-  .footer-inner,
-  .panel-caption {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .feature-card {
-    position: static;
-    width: 100%;
-    margin-top: 12px;
-  }
-
-  .contact-form,
-  .contact-note,
-  .service,
-  .project-body {
-    padding: 20px;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio of a web developer specializing in modern, responsive websites and web applications built with HTML, CSS, and JavaScript.">
+    <meta name="keywords" content="web developer, frontend developer, portfolio, HTML, CSS, JavaScript, responsive design">
+    <meta name="author" content="Your Name">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Your Name — Web Developer Portfolio">
+    <meta property="og:description" content="Professional portfolio showcasing web development projects, skills, and services.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Your Name — Web Developer Portfolio">
+    <meta name="twitter:description" content="Professional portfolio showcasing web development projects, skills, and services.">
+
+    <title>Your Name — Web Developer Portfolio</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⟨/⟩</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
 </head>
-
 <body>
-<header class="site-header">
-  <nav class="nav" aria-label="Primary navigation">
-    <a href="#" class="brand" aria-label="HB Creative home">
-      <span class="brand-mark">HB</span>
-      <span>Creative</span>
-    </a>
 
-    <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#process">Process</a>
-      <a href="#faq">FAQ</a>
-    </div>
+    <!-- ============ NAVIGATION ============ -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="#hero" class="nav-logo" aria-label="Home">
+                ⟨<span>/</span>⟩
+            </a>
 
-    <a href="#contact" class="nav-cta">Contact Me</a>
-  </nav>
-</header>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#hero" role="menuitem">Home</a></li>
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#skills" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#work" role="menuitem">Work</a></li>
+                <li role="none"><a href="#services" role="menuitem">Services</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+            </ul>
 
-<main>
-  <section class="hero" id="top">
-    <div class="wrap hero-grid">
-      <div>
-        <p class="eyebrow">Web design, graphics, video, marketing</p>
-        <h1>Creative websites and visuals that make your work look <span>serious.</span></h1>
-        <p class="hero-copy">
-          I help brands, creators, and small businesses turn ideas into clean websites, sharp graphics,
-          engaging video content, and simple digital projects that are easy to understand and easy to share.
-        </p>
-        <div class="hero-actions">
-          <a href="#work" class="btn primary">View My Work</a>
-          <a href="#contact" class="btn secondary">Start a Project</a>
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">☾</button>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
-        <div class="hero-stats" aria-label="Portfolio highlights">
-          <div class="stat">
-            <strong>04</strong>
-            <span>Creative service areas</span>
-          </div>
-          <div class="stat">
-            <strong>100%</strong>
-            <span>Responsive layouts</span>
-          </div>
-          <div class="stat">
-            <strong>Fast</strong>
-            <span>Small project delivery</span>
-          </div>
-        </div>
-      </div>
+    </nav>
 
-      <aside class="hero-panel reveal" aria-label="Featured creative preview">
-        <img src="images/image3.jpeg" alt="Featured portfolio preview">
-        <div class="panel-caption">
-          <div>
-            <strong>Modern portfolio showcase</strong>
-            <span>Built for web, design, video, and marketing work.</span>
-          </div>
-          <a href="#services" class="project-link">Explore</a>
-        </div>
-      </aside>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="mobile-menu" role="dialog" aria-label="Navigation menu">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
     </div>
-  </section>
 
-  <section class="section" id="services">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2>Services offered.</h2>
-        
-      </div>
+    <!-- ============ HERO SECTION ============ -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-profile animate-on-scroll animate-scale">
+                <img src="assets/images/profile.jpg" alt="Profile photo of Your Name" onerror="this.parentElement.style.background='linear-gradient(135deg, var(--primary), var(--secondary))'; this.style.display='none'">
+            </div>
 
-      <div class="services">
-        <article class="service reveal">
-          <div class="service-icon">Web</div>
-          <h3>Web Design</h3>
-          <p>Clean landing pages, portfolio websites, business pages, and responsive layouts for desktop and mobile.</p>
-          <div class="tags">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-          </div>
-        </article>
+            <div class="hero-content">
+                <p class="hero-greeting animate-on-scroll animate-fade-up">Hello, I'm</p>
+                <h1 class="hero-name animate-on-scroll animate-fade-up">Your Name</h1>
 
-        <article class="service reveal">
-          <div class="service-icon">Graphics</div>
-          <h3>Graphic Design</h3>
-          <p>Social posts, flyers, banners, thumbnails, brand visuals, and promo materials with a polished look.</p>
-          <div class="tags">
-            <span>Brand visuals</span>
-            <span>Social media</span>
-          </div>
-        </article>
+                <div class="hero-title-wrapper">
+                    <div id="hero-title" class="hero-title typing-cursor">Web Developer</div>
+                </div>
 
-        <article class="service reveal">
-          <div class="service-icon">Video</div>
-          <h3>Video Design & Marketing</h3>
-          <p>Short-form content direction, promotional edits, visual storytelling, and marketing assets for campaigns.</p>
-          <div class="tags">
-            <span>Promos</span>
-            <span>Content</span>
-            <span>Ads</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+                <p class="hero-description animate-on-scroll animate-fade-up">
+                    I craft clean, responsive websites and engaging web experiences. Passionate about building things that look great and work even better.
+                </p>
 
-  <section class="section alt">
-    <div class="wrap feature-band">
-      <div class="feature-media reveal">
-        <img src="images/image2.jpeg" alt="Creative project preview">
-        <div class="feature-card">
-          <strong>Design that feels clear.</strong>
-          <p>Every section is shaped to help visitors understand what you do and where to click next.</p>
-        </div>
-      </div>
+                <div class="hero-cta animate-on-scroll animate-fade-up">
+                    <a href="#work" class="btn btn-primary btn-lg">View My Work</a>
+                    <a href="#contact" class="btn btn-outline btn-lg">Contact Me</a>
+                </div>
 
-      <div class="feature-copy reveal">
-        <p class="eyebrow">Personal brand system</p>
-        <h2>A landing page you can keep growing.</h2>
-        <p>
-          This page gives you room for finished work, small projects, service details, questions,
-          and client contact without feeling crowded.
-        </p>
-        <ul class="check-list">
-          <li>Dedicated project cards where you can add working projects later.</li>
-          <li>Clean and modern UI for users.</li>
-          <li>Working Contact form connected to email workflow.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="work">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2>Live projects.</h2>
-        
-      </div>
-
-      <div class="projects-grid">
-        <article class="project reveal">
-          <img src="images/image2.jpeg" alt="Website project preview">
-          <div class="project-body">
-            <h3>Brainly Quest</h3>
-            <p>A polished page for promoting a service, collecting leads, and guiding visitors to action.</p>
-            <a href="#" class="project-link">Click here</a>
-          </div>
-        </article>
-
-        <article class="project reveal">
-          <img src="images/image3.jpeg" alt="Creative design project preview">
-          <div class="project-body">
-            <h3>Did you know?</h3>
-            <p>A collection area for flyers, social posts, thumbnails, banners, and visual brand work.</p>
-            <a href="#" class="project-link">Click here</a>
-          </div>
-        </article>
-
-        <article class="project reveal">
-          <div class="project-placeholder" aria-hidden="true">JS</div>
-          <div class="project-body">
-            <h3>CV Designer</h3>
-            <p>Use this for mini apps, games, tools, calculators, or experiments you build and host online.</p>
-            <a href="#" class="project-link">Click here</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt" id="process">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2>A simple process for turning ideas into finished work.</h2>
-        
-      </div>
-
-      <div class="process">
-        <article class="process-step reveal">
-          <h3>Discover</h3>
-          <p>Understand the goal, audience, brand direction, and the action visitors should take.</p>
-        </article>
-        <article class="process-step reveal">
-          <h3>Design</h3>
-          <p>Create the layout, visual direction, content structure, and responsive experience.</p>
-        </article>
-        <article class="process-step reveal">
-          <h3>Build</h3>
-          <p>Develop the page or project with clean code, fast loading, and flexible sections.</p>
-        </article>
-        <article class="process-step reveal">
-          <h3>Launch</h3>
-          <p>Prepare the final files, connect links, test the form, and make the work easy to share.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="faq">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <h2>Accordion section to customize later.</h2>
-        <p>Use this area for FAQs, service packages, project terms, or details clients ask about often.</p>
-      </div>
-
-      <div class="accordion reveal">
-        <div class="accordion-item">
-          <button class="accordion-button" type="button" aria-expanded="true" aria-controls="acc-1">
-            <span class="accordion-title">What kind of work can I request?</span>
-          </button>
-          <div class="accordion-content open" id="acc-1">
-            <p>You can request website design, graphic design, video design, marketing visuals, or small web projects.</p>
-          </div>
+                <div class="stats animate-on-scroll animate-fade-up">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="10" data-suffix="+">0</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="5" data-suffix="+">0</div>
+                        <div class="stat-label">Technologies</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="3" data-suffix="+">0</div>
+                        <div class="stat-label">Years</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="accordion-item">
-          <button class="accordion-button" type="button" aria-expanded="false" aria-controls="acc-2">
-            <span class="accordion-title">Can this section become pricing or packages?</span>
-          </button>
-          <div class="accordion-content" id="acc-2">
-            <p>Yes. Replace this text with package names, deliverables, timelines, and starting prices when ready.</p>
-          </div>
+        <div class="hero-scroll" aria-hidden="true">
+            <span>Scroll Down</span>
+            <span>↓</span>
         </div>
+    </section>
 
-        <div class="accordion-item">
-          <button class="accordion-button" type="button" aria-expanded="false" aria-controls="acc-3">
-            <span class="accordion-title">Where do project links go?</span>
-          </button>
-          <div class="accordion-content" id="acc-3">
-            <p>Edit the project card buttons in the work section and replace the # symbol with your live URLs.</p>
-          </div>
+    <!-- ============ ABOUT SECTION ============ -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <span class="section-label">About Me</span>
+                <h2 class="section-title">A Little Bit About Myself</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-image-wrapper animate-on-scroll animate-slide-left">
+                    <div class="about-image">
+                        <img src="assets/images/about.jpg" alt="Your Name working at desk" onerror="this.style.display='none'">
+                    </div>
+                </div>
+
+                <div class="about-info">
+                    <p class="animate-on-scroll animate-fade-up">
+                        I'm a passionate web developer focused on creating clean, efficient, and user-friendly websites. I enjoy the process of turning ideas into functional, visually appealing digital experiences.
+                    </p>
+                    <p class="animate-on-scroll animate-fade-up">
+                        My journey in web development started with curiosity about how websites work, and it has grown into a dedicated career. I believe in writing code that is not only functional but also maintainable and accessible.
+                    </p>
+
+                    <div class="about-highlights">
+                        <div class="about-highlight animate-on-scroll animate-fade-up">
+                            <div class="about-highlight-icon">⚡</div>
+                            <div>
+                                <h4>Performance First</h4>
+                                <p>Building fast, lightweight websites that load quickly on any device.</p>
+                            </div>
+                        </div>
+                        <div class="about-highlight animate-on-scroll animate-fade-up">
+                            <div class="about-highlight-icon">🎨</div>
+                            <div>
+                                <h4>Clean Design</h4>
+                                <p>Crafting interfaces that are intuitive and visually polished.</p>
+                            </div>
+                        </div>
+                        <div class="about-highlight animate-on-scroll animate-fade-up">
+                            <div class="about-highlight-icon">📱</div>
+                            <div>
+                                <h4>Mobile-First</h4>
+                                <p>Every project is designed to work beautifully on all screen sizes.</p>
+                            </div>
+                        </div>
+                        <div class="about-highlight animate-on-scroll animate-fade-up">
+                            <div class="about-highlight-icon">♿</div>
+                            <div>
+                                <h4>Accessible</h4>
+                                <p>Websites that everyone can use, regardless of ability.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section alt" id="contact">
-    <div class="wrap contact-layout">
-      <div class="contact-note reveal">
-        <p class="eyebrow">Contact me</p>
-        <h2>Have a project in mind?</h2>
-        <p>
-          Send the details and I will get back to you. You can use this form for design work,
-          website projects, marketing visuals, collaborations, or custom requests.
-        </p>
-        <ul class="contact-list">
-          <li>Email: heneblaise21@gmail.com</li>
-          <li>Availability: Freelance projects and collaborations</li>
-          <li>Location: Remote friendly</li>
-        </ul>
-      </div>
+    <!-- ============ SKILLS SECTION ============ -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <span class="section-label">Skills</span>
+                <h2 class="section-title">Technologies I Work With</h2>
+                <p class="section-subtitle">A curated set of tools and technologies I use to bring ideas to life.</p>
+            </div>
 
+            <div class="skills-filters animate-on-scroll animate-fade-up" role="tablist" aria-label="Skill categories">
+                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+                <button class="filter-btn" data-filter="frontend" role="tab" aria-selected="false">Frontend</button>
+                <button class="filter-btn" data-filter="tools" role="tab" aria-selected="false">Tools</button>
+                <button class="filter-btn" data-filter="design" role="tab" aria-selected="false">Design</button>
+                <button class="filter-btn" data-filter="other" role="tab" aria-selected="false">Other</button>
+            </div>
 
-      <form action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="d9c6fe59-164a-40d8-971f-fdd26287a13c">
-
-
-
-        <div class="field-grid">
-          <label>
-            Your Name
-            <input type="text" name="name" placeholder="Enter your name" required>
-          </label>
-          <label>
-            Your Location
-            <input type="text" name="location" placeholder="City or country" required>
-          </label>
+            <div class="skills-grid" id="skills-grid">
+                <!-- Skills are rendered via JS below -->
+            </div>
         </div>
+    </section>
 
-        <label>
-          Email Address
-          <input type="email" name="email" placeholder="Enter your email" required>
-        </label>
+    <!-- ============ FEATURED WORK ============ -->
+    <section id="work" class="section featured-projects">
+        <div class="container">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <span class="section-label">Featured Work</span>
+                <h2 class="section-title">Selected Projects</h2>
+                <p class="section-subtitle">A collection of projects I've built, from web applications to creative experiments.</p>
+            </div>
 
-        <label>
-          Project Type
-          <input type="text" name="project_type" placeholder="Web design, graphics, video, marketing...">
-        </label>
+            <div class="projects-grid" id="featured-projects-grid">
+                <!-- Rendered by ProjectsEngine -->
+            </div>
+        </div>
+    </section>
 
-        <label>
-          Message
-          <textarea name="message" placeholder="Tell me about your project" required></textarea>
-        </label>
+    <!-- ============ PROJECT EXPLORER ============ -->
+    <section class="project-explorer">
+        <div class="container">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <span class="section-label">Explore</span>
+                <h2 class="section-title">All Projects</h2>
+            </div>
 
-        <button class="btn primary" type="submit">Send Message</button>
-      </form>
+            <div class="explorer-filters animate-on-scroll animate-fade-up" role="tablist" aria-label="Project categories">
+                <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+                <button class="filter-btn" data-filter="website" role="tab" aria-selected="false">Websites</button>
+                <button class="filter-btn" data-filter="web-app" role="tab" aria-selected="false">Web Apps</button>
+                <button class="filter-btn" data-filter="game" role="tab" aria-selected="false">Games</button>
+                <button class="filter-btn" data-filter="tool" role="tab" aria-selected="false">Tools</button>
+            </div>
+
+            <div class="search-wrapper animate-on-scroll animate-fade-up">
+                <span class="search-icon" aria-hidden="true">🔍</span>
+                <input type="text" id="project-search" class="search-input" placeholder="Search projects by name, description, or technology..." aria-label="Search projects">
+            </div>
+
+            <p class="projects-count" id="projects-count" aria-live="polite"></p>
+
+            <div class="projects-grid" id="explorer-grid">
+                <!-- Rendered by ProjectExplorer -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ EXPERIMENTS ============ -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <span class="section-label">Playground</span>
+                <h2 class="section-title">Experiments</h2>
+                <p class="section-subtitle">Small creative projects, games, and JavaScript experiments.</p>
+            </div>
+
+            <div class="experiments-grid" id="experiments-grid">
+                <!-- Rendered by ExperimentsRenderer -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CURRENTLY BUILDING ============ -->
+    <section class="section currently-building">
+        <div class="container">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <span class="section-label">WIP</span>
+                <h2 class="section-title">Currently Building</h2>
+            </div>
+
+            <div id="currently-building">
+                <!-- Rendered by CurrentlyBuildingRenderer -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <span class="section-label">Services</span>
+                <h2 class="section-title">What I Can Do For You</h2>
+                <p class="section-subtitle">Professional services tailored to bring your digital vision to reality.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll animate-fade-up">
+                    <div class="service-icon">🌐</div>
+                    <h3 class="service-title">Web Development</h3>
+                    <p class="service-description">Custom websites built from scratch with clean HTML, CSS, and JavaScript. Fast, responsive, and maintainable.</p>
+                </div>
+                <div class="service-card animate-on-scroll animate-fade-up">
+                    <div class="service-icon">⚡</div>
+                    <h3 class="service-title">Frontend Development</h3>
+                    <p class="service-description">Interactive user interfaces with smooth animations, dynamic content, and modern design patterns.</p>
+                </div>
+                <div class="service-card animate-on-scroll animate-fade-up">
+                    <div class="service-icon">🎨</div>
+                    <h3 class="service-title">UI Design</h3>
+                    <p class="service-description">Clean, intuitive interface design focused on user experience, accessibility, and visual consistency.</p>
+                </div>
+                <div class="service-card animate-on-scroll animate-fade-up">
+                    <div class="service-icon">📱</div>
+                    <h3 class="service-title">Responsive Design</h3>
+                    <p class="service-description">Mobile-first websites that look and work perfectly on every device, from phones to large monitors.</p>
+                </div>
+                <div class="service-card animate-on-scroll animate-fade-up">
+                    <div class="service-icon">🔧</div>
+                    <h3 class="service-title">Website Maintenance</h3>
+                    <p class="service-description">Ongoing support, updates, and improvements to keep your website running smoothly and securely.</p>
+                </div>
+                <div class="service-card animate-on-scroll animate-fade-up">
+                    <div class="service-icon">🚀</div>
+                    <h3 class="service-title">Performance Optimization</h3>
+                    <p class="service-description">Speed audits, image optimization, and code improvements to make your site lightning fast.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ WORK PROCESS ============ -->
+    <section class="section" style="background: var(--bg-secondary)">
+        <div class="container">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <span class="section-label">Process</span>
+                <h2 class="section-title">How I Work</h2>
+                <p class="section-subtitle">A clear, structured approach to every project I take on.</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step animate-on-scroll animate-fade-up">
+                    <span class="process-number">1</span>
+                    <h3 class="process-step-title">Discover</h3>
+                    <p class="process-step-desc">Understanding your goals, target audience, and requirements to define the project scope clearly.</p>
+                </div>
+                <div class="process-step animate-on-scroll animate-fade-up">
+                    <span class="process-number">2</span>
+                    <h3 class="process-step-title">Plan</h3>
+                    <p class="process-step-desc">Creating wireframes, defining the tech stack, and establishing a clear roadmap for development.</p>
+                </div>
+                <div class="process-step animate-on-scroll animate-fade-up">
+                    <span class="process-number">3</span>
+                    <h3 class="process-step-title">Build</h3>
+                    <p class="process-step-desc">Writing clean, semantic code. Building responsive layouts and interactive features iteratively.</p>
+                </div>
+                <div class="process-step animate-on-scroll animate-fade-up">
+                    <span class="process-number">4</span>
+                    <h3 class="process-step-title">Test</h3>
+                    <p class="process-step-desc">Thorough testing across browsers and devices. Fixing bugs and optimizing performance.</p>
+                </div>
+                <div class="process-step animate-on-scroll animate-fade-up">
+                    <span class="process-number">5</span>
+                    <h3 class="process-step-title">Launch</h3>
+                    <p class="process-step-desc">Deploying the final product and providing ongoing support to ensure everything runs perfectly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ RESUME ============ -->
+    <section class="section resume-section">
+        <div class="container">
+            <div class="resume-content animate-on-scroll animate-fade-up">
+                <div class="resume-icon">📄</div>
+                <div class="resume-text">
+                    <h3>Download My Resume</h3>
+                    <p>Get a complete overview of my skills, experience, and education in a downloadable PDF.</p>
+                </div>
+                <a href="assets/resume/resume.pdf" class="btn btn-primary btn-lg" download aria-label="Download resume PDF">
+                    Download Resume ↓
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT SECTION ============ -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header animate-on-scroll animate-fade-up">
+                <span class="section-label">Contact</span>
+                <h2 class="section-title">Let's Work Together</h2>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info animate-on-scroll animate-slide-left">
+                    <h2>Have an idea?<br>Let's build <span>something great.</span></h2>
+                    <p>I'm always open to new opportunities, collaborations, and interesting projects. Whether you have a question or just want to say hi, feel free to reach out.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-item-icon">✉</div>
+                            <div>
+                                <div class="contact-item-label">Email</div>
+                                <div class="contact-item-value">your@email.com</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">📍</div>
+                            <div>
+                                <div class="contact-item-label">Location</div>
+                                <div class="contact-item-value">Your City, Country</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="GitHub profile" target="_blank" rel="noopener">⟨/⟩</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn profile" target="_blank" rel="noopener">in</a>
+                        <a href="#" class="social-link" aria-label="Twitter profile" target="_blank" rel="noopener">𝕏</a>
+                    </div>
+                </div>
+
+                <form id="contact-form" class="contact-form animate-on-scroll animate-slide-right" novalidate>
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" class="form-input" placeholder="Your name" required autocomplete="name">
+                        <span class="form-error" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-input" placeholder="your@email.com" required autocomplete="email">
+                        <span class="form-error" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" id="subject" class="form-input" placeholder="What's this about?" required>
+                        <span class="form-error" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" class="form-textarea" placeholder="Tell me about your project..." required></textarea>
+                        <span class="form-error" aria-live="polite"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                    <div class="form-status" aria-live="polite"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#hero" class="nav-logo" aria-label="Home">⟨<span>/</span>⟩</a>
+                    <p>Crafting clean, responsive websites with modern web technologies. Always learning, always building.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#work">Work</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">⟨/⟩</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">in</a>
+                        <a href="#" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">𝕏</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Your Name. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ MODAL ============ -->
+    <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Project details">
+        <div class="modal">
+            <!-- Rendered dynamically -->
+        </div>
     </div>
-  </section>
-</main>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <p>© 2026 HB Creative. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="#">GitHub</a>
-      <a href="#">LinkedIn</a>
-      <a href="#">Twitter</a>
-    </div>
-  </div>
-</footer>
+    <!-- ============ SCRIPTS ============ -->
+    <script src="js/projects.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
 
-<script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.16 });
+    <!-- Skills Data (inline for simplicity — can be moved to a separate file) -->
+    <script>
+        const skills = [
+            { name: "HTML", category: "frontend", level: 95, icon: "◇" },
+            { name: "CSS", category: "frontend", level: 90, icon: "◆" },
+            { name: "JavaScript", category: "frontend", level: 85, icon: "JS" },
+            { name: "Git", category: "tools", level: 80, icon: "⎇" },
+            { name: "VS Code", category: "tools", level: 90, icon: "⟨⟩" },
+            { name: "Figma", category: "design", level: 70, icon: "◈" },
+            { name: "Responsive Design", category: "frontend", level: 92, icon: "📱" },
+            { name: "Accessibility", category: "other", level: 80, icon: "♿" },
+            { name: "Performance", category: "other", level: 85, icon: "⚡" },
+            { name: "SEO Basics", category: "other", level: 75, icon: "🔍" },
+            { name: "UI/UX Principles", category: "design", level: 78, icon: "🎨" },
+            { name: "Problem Solving", category: "other", level: 88, icon: "🧠" }
+        ];
 
-document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+        function renderSkills(filter = 'all') {
+            const grid = document.getElementById('skills-grid');
+            if (!grid) return;
 
-document.querySelectorAll(".accordion-button").forEach((button) => {
-  button.addEventListener("click", () => {
-    const target = document.getElementById(button.getAttribute("aria-controls"));
-    const isOpen = button.getAttribute("aria-expanded") === "true";
+            const filtered = filter === 'all' ? skills : skills.filter(s => s.category === filter);
 
-    button.setAttribute("aria-expanded", String(!isOpen));
-    target.classList.toggle("open", !isOpen);
-  });
-});
-</script>
+            grid.innerHTML = filtered.map(skill => `
+                <div class="skill-card animate-on-scroll animate-fade-up">
+                    <div class="skill-icon">${skill.icon}</div>
+                    <div class="skill-info">
+                        <div class="skill-name">${skill.name}</div>
+                        <div class="skill-category">${skill.category.charAt(0).toUpperCase() + skill.category.slice(1)}</div>
+                        <div class="skill-level">
+                            <div class="skill-level-bar" style="width: 0%" data-width="${skill.level}%"></div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            requestAnimationFrame(() => {
+                grid.querySelectorAll('.skill-level-bar').forEach(bar => {
+                    bar.style.width = bar.dataset.width;
+                });
+            });
+
+            AnimationManager.init();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderSkills();
+
+            document.querySelectorAll('#skills .skills-filters .filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('#skills .skills-filters .filter-btn').forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-selected', 'false');
+                    });
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-selected', 'true');
+                    renderSkills(btn.dataset.filter);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
